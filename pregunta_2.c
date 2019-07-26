@@ -1,8 +1,9 @@
+#include <dos.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 
-volatile int v;
+volatile int v, resultado;
 
 void *worker1(void *arg) {
 
@@ -15,24 +16,26 @@ void *worker1(void *arg) {
 
 void *worker2(void *arg) {
 
-    int x = 1250, resultado;
+    sleep(2);
+
+    int x = 1250;
 
     resultado = (x*v);
+
 
     return NULL;
 }
 
-                       
+
 int main(int argc, char *argv[]) {
 
     pthread_t p1, p2;
 
-    Pthread_create(&p1, NULL, worker1, NULL);//crea un hilo 
-    Pthread_create(&p2, NULL, worker2, NULL); //crea el segundo hilo
+    Pthread_create(&p1, NULL, worker1, NULL);
+    Pthread_create(&p2, NULL, worker2, NULL);
     Pthread_join(p1, NULL);
     Pthread_join(p2, NULL);
 
     printf("resultado = %d\n",resultado);
     return 0;
 }
-                          

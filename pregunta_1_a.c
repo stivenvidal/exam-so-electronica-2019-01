@@ -9,7 +9,7 @@
 volatile int counter = 0;
 cerradura acceso;
 int loops;
-                                                             
+
 void *worker(void *arg) {
     int i;
     cerrar_puerta(acceso);
@@ -19,7 +19,7 @@ void *worker(void *arg) {
     abrir_puerta(acceso);
     return NULL;
 }
-                       
+
 int main(int argc, char *argv[]) {
 
     clock_t tiempo_inicio,tiempo_final;
@@ -34,8 +34,8 @@ int main(int argc, char *argv[]) {
     loops = atoi(argv[1]);
     pthread_t p1, p2;
     printf("Initial value : %d\n", counter);
-    Pthread_create(&p1, NULL, worker, NULL);//crea un hilo 
-    Pthread_create(&p2, NULL, worker, NULL); //crea el segundo hilo
+    Pthread_create(&p1, NULL, worker, NULL);
+    Pthread_create(&p2, NULL, worker, NULL);
     Pthread_join(p1, NULL);
     Pthread_join(p2, NULL);
     printf("Final value   : %d\n", counter);
@@ -47,4 +47,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-                          
+
