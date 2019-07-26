@@ -9,7 +9,7 @@ Al ejecutar el programa [pregunta_1_b.c](pregunta_1_b.c) con el argumento 200000
 
 ## c):
 Pienso que talves los programas tuvieron tiempos diferentes porque debido a que como en el programa [pregunta_1_b.c](pregunta_1_b.c) las funciones abrir y cerrar puerta estan
-dentro de la funcion for() el programa debe llamar  a esas funciones muchas veces (valor del argumento, y esto tarda mas tiempo.
+dentro de la funcion for() el programa debe llamar  a esas funciones muchas veces (valor del argumento), y esto tarda mas tiempo.
 
 ## Pregunta 2:
 Al ejecutar el programa [pregunta_2.c](pregunta_2.c) deveria imprimir un valor aproximado a 89, no pude correr el programa por que no pude solucionar un error al incluir la libreia dos.h
